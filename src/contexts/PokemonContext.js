@@ -10,7 +10,7 @@ const PokemonProvider = ({ children }) => {
   const arr = [];
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`)
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`)
       .then((res) => res.json())
       .then((data) =>
         setResult(
@@ -29,7 +29,7 @@ const PokemonProvider = ({ children }) => {
 
   setTimeout(() => {
     setLoad(false);
-  }, 1000);
+  }, 2000);
 
   const data = {
     pokemon: pokemon,

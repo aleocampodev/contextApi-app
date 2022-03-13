@@ -4,6 +4,8 @@ import UserContext from "../contexts/UserContext";
 const Pokemon = ({ img }) => {
   const { toggleFavoritPokemon, user } = useContext(UserContext);
 
+  console.log(img, "hola imagen");
+
   const imgStyles = {
     height: "260px",
     objectFit: "cover",
@@ -12,14 +14,19 @@ const Pokemon = ({ img }) => {
   const isFavorite = user?.favoritesPokemon?.includes(img.id);
 
   return (
-    <div className="card">
+    <div
+      className={`card ${
+        isFavorite ? "border-info" : " border-warning"
+      } border m-3`}
+    >
       <img
         src={img.sprites.front_default}
         alt={img.name}
         className="card-img-top"
         styles={imgStyles}
       />
-      <h4>{img.name}</h4>
+      <h4 className="text-center">{img.name}</h4>
+      <h6 className="text-center">Type: {img.types[0].type.name}</h6>
       <div className="card-body">
         {user?.id && (
           <button

@@ -12,8 +12,11 @@ const PokemonList = () => {
           <p>loading...</p>
         ) : (
           pokemon.map((img, i) => {
-            console.log(img, "hola imagen", img.sprites.front_default);
-            return <Pokemon img={img} key={img.id} />;
+            return (
+              <div className="col-md-4 " key={img.id}>
+                <Pokemon img={img} />
+              </div>
+            );
           })
         )}
       </div>

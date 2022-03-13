@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark mb-4">
       <div className="container">
-        <span className="navbar-brand">
+        <span className="navbar-brand w-100 d-flex justify-content-between">
           <h2>{user ? `Hola ${user.name}` : `Bienvenid@`}</h2>
           {user ? (
             <button className="btn btn-primary" onClick={logout}>
