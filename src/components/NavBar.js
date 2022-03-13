@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className="navbar navbar-dark bg-dark mb-4">
       <div className="container">
         <span className="navbar-brand">
-          <h2>{user ? `Hola ${user.name}` : `Bienvenido ${user.name}`}</h2>
+          <h2>{user ? `Hola ${user.name}` : `Bienvenid@`}</h2>
           {user ? (
             <button className="btn btn-primary" onClick={logout}>
               Cerrar Sesión
