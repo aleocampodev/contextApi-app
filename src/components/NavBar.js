@@ -8,14 +8,14 @@ const NavBar = () => {
     <nav className="navbar navbar-dark bg-dark mb-4">
       <div className="container">
         <span className="navbar-brand w-100 d-flex justify-content-between">
-          <h2>{user ? `Hola ${user.name}` : `Bienvenid@`}</h2>
+          <h2>{user ? `Hello ${user.name}` : `Welcome`}</h2>
           {user ? (
             <button className="btn btn-primary" onClick={logout}>
-              Cerrar Sesión
+              Logout
             </button>
           ) : (
             <button className="btn btn-primary" onClick={login}>
-              Iniciar Sesión
+              Login
             </button>
           )}
         </span>
