@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import UserContext from "../contexts/UserContext";
 
 const Pokemon = ({ img }) => {
-  const { toggleFavoritPokemon, user } = useContext(UserContext);
+  const { toggleFavoritPokemon, user, favoritesPokemon } =
+    useContext(UserContext);
 
   const imgStyles = {
     height: "260px",
@@ -25,7 +26,7 @@ const Pokemon = ({ img }) => {
       />
       <h4 className="text-center">{img.name}</h4>
       <h6 className="text-center">Type: {img.types[0].type.name}</h6>
-      {user?.id && (
+      {user?.id && favoritesPokemon && (
         <div className="card-body">
           <h6 className="text-center">Weight: {img.weight}</h6>
           <h6 className="text-center">Height: {img.height}</h6>
